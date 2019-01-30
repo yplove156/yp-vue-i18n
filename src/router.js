@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import i18n from './config/i18n'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
@@ -9,15 +10,10 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      meta: {
+        title: i18n.t('page.home.title')
+      },
       component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
 })
